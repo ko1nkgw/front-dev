@@ -1,11 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const el = document.querySelector('.animate-title');
+document.addEventListener("DOMContentLoaded", () => {
+    const el = document.querySelector(".animate-title");
     const str = el.innerHTML.trim();
-    let concatStr = '';
 
-    for (let c of str) {
-        c = c.replace(' ', '&nbsp;');
-        concatStr += `<span class="char">${c}</span>`;
-    }
-    el.innerHTML = concatStr;
+    el.innerHTML = str.split('').reduce((accu, curr) => {
+        curr = curr.replace(" ", "&nbsp;");
+        accu += `<span class="char">${curr}</span>`;
+        return accu;
+        // console.log(accu);
+    }, "");
+
 });
