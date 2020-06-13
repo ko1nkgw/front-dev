@@ -1,8 +1,13 @@
 const btn = document.querySelector('#btn');
 
-function hello() {
+function changeColor() {
     // alert('hello');
     this.style.color = 'red';
 };
 
-btn.addEventListener('click', hello);
+function changeBgColor() {
+    this.style.backgroundColor = 'green';
+}
+
+btn.addEventListener('click', changeColor);
+btn.addEventListener('click', changeBgColor);
