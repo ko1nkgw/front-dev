@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const ta = new TextAnimation(".animate-title");
-    const ta2 = new TextAnimation(".animate-title-2");
+    const btn = document.querySelector('#btn');
+    const ta = new TextAnimation('.animate-title');
+    const ta2 = new TextAnimation('.animate-title-2');
     setTimeout(() => {
         ta.animate();
         ta2.animate();
     }, 1000);
+    btn.addEventListener('click', () => { ta.animate(); } );
+    btn.addEventListener('click', () => { ta2.animate(); } );
 });
 class TextAnimation {
     constructor(el) {
